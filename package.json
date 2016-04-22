@@ -1,6 +1,6 @@
 {
   "name": "lego-state",
-  "version": "1.0.7",
+  "version": "1.0.0",
   "description": "Conditional state classes based on a provided test argument.",
   "main": "src/index.js",
   "scripts": {
