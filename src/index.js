@@ -16,17 +16,16 @@ function hasClassInName( node, c ) {
     return ` ${ node.className } `.indexOf( ` ${ c } ` ) > -1;
 }
 
-function addClassInName( node, c ) {
-    if ( !hasClassInName( node, c ) ) {
-        let className = `${node.className} ${c}`;
-        node.className.baseVal ? node.className.baseVal = className : node.className = className;
+function addClassInName( elem, c ) {
+    if ( !hasClassInName( elem, c ) ) {
+        elem.setAttribute('class', `${elem.className} ${c}`);
     }
     return true;
 }
 
-function removeClassInName( node, c ) {
-    let className = ` ${ node.className } `.replace( new RegExp( ` ${ c } `, 'g' ), ' ' ).trim();
-    node.className.baseVal ? node.className.baseVal = className : node.className = className;
+function removeClassInName( elem, c ) {
+    const className = ` ${ elem.className } `.replace( new RegExp( ` ${ c } `, 'g' ), ' ' ).trim();
+    elem.setAttribute('class', className);
     return false;
 }
 
